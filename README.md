@@ -5,7 +5,7 @@ A custom template for News Apps Django projects. In a constant state of developm
 
 ## Requirements
 
-- Django 1.6
+- Django 1.7
 - `virtualenvwrapper`
 - Willingness to change this README to something that makes sense with your project post-generation
 
@@ -54,10 +54,10 @@ Now, install your local development requirements.
 pip install -r requirements/local.txt
 ```
 
-You should be able to run your first `syncdb` now! Give it a try.
+You should be able to run your first `migrate` now! Give it a try.
 
 ```bash
-python <name-of-your-project>/manage.py syncdb
+python <name-of-your-project>/manage.py migrate
 ```
 
 And it should be able to handle `runserver` now, too.
