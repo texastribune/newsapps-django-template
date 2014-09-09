@@ -36,7 +36,7 @@ You may need to re-initialize your virtual environment for autocomplete of Djang
 Now we're ready to start cookin'. (The name of your project doesn't have to be the same as the folder you created.)
 
 ```bash
-django-project.py startproject --template=https://github.com/texastribune/newsapps-django-template/archive/master.zip --extension=gitignore,html,py <name-of-your-project> <folder-of-your-project>
+django-admin startproject --template=https://github.com/texastribune/newsapps-django-template/archive/master.zip --extension=gitignore,html,py <name-of-your-project> <folder-of-your-project>
 ```
 
 Jump into your newly created project folder, get `git` initialized, and make your first commit!
