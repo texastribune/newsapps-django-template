@@ -31,7 +31,7 @@ Next, install Django.
 pip install django
 ```
 
-You may need to re-initialize your virtual environment for autocomplete of Django commands. (`workon <name-of-your-project>`)
+You may need to re-initialize your virtual environment for autocomplete of Django commands. (`workon <name-of-your-project>-dev`)
 
 Now we're ready to start cookin'. (The name of your project doesn't have to be the same as the folder you created.)
 
