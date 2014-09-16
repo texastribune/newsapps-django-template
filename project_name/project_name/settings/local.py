@@ -4,6 +4,8 @@
 
 import os
 
+import dj_database_url
+
 from .base import *
 
 
@@ -23,15 +25,11 @@ TEMPLATE_DEBUG = DEBUG
 ##########################
 
 # https://docs.djangoproject.com/en/{{ docs_version }}/ref/settings/#databases
+# https://github.com/kennethreitz/dj-database-url
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'default.db'),
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': '',
-        'PORT': '',
-    }
+    'default': dj_database_url.config(
+        default='sqlite:///{}'.format(os.path.join(BASE_DIR, 'default.db'))
+    )
 }
 
 

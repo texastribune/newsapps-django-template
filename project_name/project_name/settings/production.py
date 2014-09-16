@@ -6,6 +6,8 @@ from os import environ
 
 from django.core.exceptions import ImproperlyConfigured
 
+import dj_database_url
+
 from .base import *
 
 
@@ -32,7 +34,10 @@ ALLOWED_HOSTS = []
 ##########################
 
 # https://docs.djangoproject.com/en/{{ docs_version }}/ref/settings/#databases
-DATABASES = {}
+# https://github.com/kennethreitz/dj-database-url
+DATABASES = {
+    'default': dj_database_url.config()
+}
 
 
 #######################
@@ -40,7 +45,11 @@ DATABASES = {}
 #######################
 
 # See: https://docs.djangoproject.com/en/{{ docs_version }}/ref/settings/#caches
-CACHES = {}
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+    }
+}
 
 
 ############################
