@@ -1,4 +1,4 @@
 Django>=1.7
 
 dj-database-url==0.3.0
-whitenoise==1.0.3
+whitenoise==1.0.6
