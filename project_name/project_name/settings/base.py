@@ -4,6 +4,25 @@
 
 import os
 
+from django.core.exceptions import ImproperlyConfigured
+
+
+###########
+# HELPERS #
+###########
+
+def get_env_setting(setting, default=None):
+    """ Get the environment setting or return exception """
+    try:
+        return os.environ[setting]
+    except KeyError:
+        if default is not None:
+            return default
+        else:
+            error_msg = ('The {} env variable was not found '
+                         'and no default was set!').format(setting)
+            raise ImproperlyConfigured(error_msg)
+
 
 ######################
 # PATH CONFIGURATION #
@@ -41,7 +60,7 @@ SECRET_KEY = 'this_is_my_development_key'
 #####################
 
 # https://docs.djangoproject.com/en/{{ docs_version }}/ref/settings/#installed-apps
-INSTALLED_APPS = (
+DJANGO_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -49,6 +68,12 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
 )
+
+PROJECT_APPS = (
+
+)
+
+INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS
 
 
 ############################
@@ -164,3 +189,10 @@ MEDIA_URL = '/media/'
 
 # http://whitenoise.evans.io/en/latest/django.html#add-gzip-and-caching-support
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+
+
+#############################
+# PROJECT SPECIFIC SETTINGS #
+#############################
+
+# Project specific additions go here!
