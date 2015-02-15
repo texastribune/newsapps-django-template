@@ -27,3 +27,6 @@ bower_components
 # Django things
 {{ project_name }}/media/
 {{ project_name }}/assets/
+
+# Environment things
+.env
