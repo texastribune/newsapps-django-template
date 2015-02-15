@@ -131,7 +131,7 @@ WSGI_APPLICATION = '{{ project_name }}.wsgi.application'
 LANGUAGE_CODE = 'en-us'
 
 # See: https://docs.djangoproject.com/en/{{ docs_version }}/ref/settings/#time-zone
-TIME_ZONE = 'America/Chicago'
+TIME_ZONE = 'UTC'
 
 # See: https://docs.djangoproject.com/en/{{ docs_version }}/ref/settings/#site-id
 SITE_ID = 1
